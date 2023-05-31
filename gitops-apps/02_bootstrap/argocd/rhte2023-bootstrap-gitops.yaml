@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rhte2023-bootstrap-gitops
+  name: bootstrap-gitops
   namespace: openshift-gitops
 spec:
   destination:
