@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: draw-app
+    app.kubernetes.io/component: draw-app
+    app.kubernetes.io/instance: draw-app
+  name: draw-app
+  namespace: draw-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: draw-app
+      app.kubernetes.io/instance: draw-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/component: draw-app
+        app.kubernetes.io/instance: draw-app
+    spec:
+      containers:
+      - image: quay.io/jclaret/chatdraw:latest
+        imagePullPolicy: Always
+        name: draw-app
+        ports:
+        - containerPort: 8001
+          protocol: TCP
+        resources: {}
+      serviceAccountName: default
+status: {}
