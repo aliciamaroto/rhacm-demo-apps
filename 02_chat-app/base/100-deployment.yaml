@@ -9,7 +9,7 @@ metadata:
   name: chat-app
   namespace: chat-app
 spec:
-  replicas: 7 
+  replicas: 8 
   selector:
     matchLabels:
       app.kubernetes.io/component: chat-app
